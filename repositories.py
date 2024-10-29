@@ -30,7 +30,7 @@ def get_user_repos(username):
 
 
 def write_repositories_csv(usernames):
-    with open('repositories (3).csv', mode='w', newline='', encoding='utf-8') as file:
+    with open('repositories.csv', mode='w', newline='', encoding='utf-8') as file:
         writer = csv.writer(file)
         writer.writerow([
             'login', 'full_name', 'created_at', 'stargazers_count', 'watchers_count',
@@ -59,7 +59,7 @@ def write_repositories_csv(usernames):
 
 if __name__ == "__main__":
     usernames = []
-    with open(r"C:\Python Programs\proj 1 tds\users.csv", mode='r', encoding='utf-8') as file: # Path to your users.csv
+    with open(r"users.csv", mode='r', encoding='utf-8') as file: # Path to your users.csv
         reader = csv.DictReader(file)
         usernames = [row['login'] for row in reader]
     write_repositories_csv(usernames)
